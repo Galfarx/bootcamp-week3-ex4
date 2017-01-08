@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Starter Template for Bootcamp projects</title>
+
+    <link href="dist/styles/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <a class="navbar-brand" href="#">dkubis</a>
+    <ul class="nav navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container" ng-app>
+
+    <h1>Angular form validator</h1>
+
+    <form name="registerForm" novalidate>
+        <div class="form-group">
+            <input type="text" class="form-control" name="firstName" placeholder="Imię"
+                   ng-model="user.name" ng-required="true">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="lastName" placeholder="Nazwisko"
+                   ng-model="user.lastName" ng-required="true">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email"
+                   ng-model="user.email" ng-required="true">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password"
+                   ng-model="user.password" ng-required="true" ng-minlength="5">
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" name="terms" ng-model="user.terms" ng-required="true"> Akceptuj regulamin
+        </div>
+        <button type="submit" class="btn btn-default" ng-disabled="registerForm.$invalid">Wyślij</button>
+    </form>
+
+</div>
+
+<script src="dist/scripts/script.js"></script>
+</body>
+</html>
